@@ -15,7 +15,7 @@ public class MyLinkList {
     private ListNode head;
     private static final int START_POS = 0;
     //根据pos返回偏移后的节点引用
-    private ListNode getListNode(int pos){
+    private ListNode getListNode(Integer pos){
         //若输入位置不合法将直接返回节点为空
         if(pos < START_POS || pos > listSize){
             return null;
@@ -28,7 +28,7 @@ public class MyLinkList {
         return node;
     }
     //查找num并返回其引用，若有重复返回第一个节点的引用
-    private ListNode selectLinkNode(int num){
+    private ListNode selectLinkNode(Integer num){
         //链表为空直接return
         if(isEmpty()){
             return null;
@@ -53,7 +53,7 @@ public class MyLinkList {
         }
     }
     //在满足条件的合法的位置插入节点
-    public boolean insertListNode(int num,int pos){
+    public boolean insertListNode(Integer num,Integer pos){
         ListNode node = new ListNode(num);
        //获取偏移节点
         ListNode p = getListNode(pos);
@@ -67,7 +67,7 @@ public class MyLinkList {
         return true;
     }
     //以下标的形式删除节点
-    public boolean deletePosListNode(int pos){
+    public boolean deletePosListNode(Integer pos){
         ListNode p = getListNode(pos);
         if(null == p){
             //输入pos有误
@@ -79,7 +79,7 @@ public class MyLinkList {
         return true;
     }
     //以num的形式删除节点
-    public boolean deleteNumListNode(int num){
+    public boolean deleteNumListNode(Integer num){
         boolean res = true;
         ListNode p = selectLinkNode(num);
         if(null == p){
@@ -91,7 +91,7 @@ public class MyLinkList {
         return res;
     }
     //查找num是否存在与链表中
-    public boolean isNumLinkList(int num){
+    public boolean isNumLinkList(Integer num){
         boolean res = false;
         if(null!= selectLinkNode(num)){
             res = true;
@@ -99,7 +99,7 @@ public class MyLinkList {
         return res;
     }
     //链表头插
-    public void push_front(int num){
+    public void push_front(Integer num){
         insertListNode(num,0);
         return;
     }
